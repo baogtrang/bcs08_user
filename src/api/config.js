@@ -6,3 +6,6 @@ export const configHeaders = () => {
     TokenCybersoft: TOKEN_CYBER,
   };
 };
+
+export const BASE_URL = "https://movienew.cybersoft.edu.vn/api"
+

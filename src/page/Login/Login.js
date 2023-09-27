@@ -4,9 +4,11 @@ import FormLogin from './Form'
 
 export default function Login() {
   return (
-    <div className='container flex'>
-      <FormLogin/>
-      <Banner/>
+    <div className='h-screen bg-orange-600 flex items-center'>
+      <div className='container flex bg-white rounded-xl p-10'>
+        <FormLogin/>
+        <Banner/>
+      </div>
     </div>
   )
 }

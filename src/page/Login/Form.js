@@ -62,8 +62,8 @@ const FormLogin = () => (
         span: 16,
       }}
     >
-      <Button type="primary" htmlType="submit">
-        Submit
+      <Button type="primary" className='bg-orange-600' htmlType="submit">
+        Log in
       </Button>
     </Form.Item>
   </Form>

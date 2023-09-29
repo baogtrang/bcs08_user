@@ -7,6 +7,7 @@ import axios from "axios"
 import { useDispatch } from 'react-redux';
 import { SET_INFO } from '../../redux/constant/user';
 import { useNavigate } from 'react-router-dom';
+import { userLocalStorage } from '../../api/localService';
 
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
@@ -38,10 +39,8 @@ const FormLogin = () => {
           payload: res.data.content,
         }
         dispatch(action);
-
-        // storing user data in local storage
-        let dataJson = JSON.stringify(res.data.content);
-        localStorage.setItem("USER", dataJson);
+        userLocalStorage.set(res.data.content);
+        
         message.success("Login succeeded");
 
         //navigate to Home

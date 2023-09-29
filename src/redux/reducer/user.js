@@ -1,8 +1,10 @@
+import { userLocalStorage } from "../../api/localService";
 import { SET_INFO } from "../constant/user";
 
 //rxreducer
+// initialState chạy khi load trang
 const initialState = {
-    info: null,
+    info: userLocalStorage.get(),
 }
 
 let userReducer=(state=initialState,{ type, payload }) => {

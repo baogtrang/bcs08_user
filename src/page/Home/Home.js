@@ -5,7 +5,7 @@ export default function Home() {
   
 
   return (
-    <div className="container flex">
+    <div>
       <Header/>
     </div>
   )

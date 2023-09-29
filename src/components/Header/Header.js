@@ -40,7 +40,7 @@ export default function Header() {
     
     return (
         <div className='h-20 flex items-center justify-between shadow-lg px-20 '>
-            <span>Cyberflix</span>  
+            <span className="text-3xl font-medium text-red-600 animate-pulse">Cyberflix</span>  
             <div className='space-x-5'>{renderUserNav()}</div>    
         </div>
     )

@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './page/Home/Home';
 import Login from './page/Login/Login';
-import MovieDetail from './page/MovieDetail/MovieDetail';
 import Layout from './template/Layout';
+import MovieDetail from './page/Home/MovieDetail/MovieDetail';
 
 function App() {
   return (

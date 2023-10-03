@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getMovieDetail } from '../../api/api';
+import { getMovieDetail } from '../../../api/api';
 import { Progress } from 'antd';
 
 export default function MovieDetail() {

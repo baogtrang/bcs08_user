@@ -3,8 +3,12 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   mode: "jit",
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        200: '800px',
+        banner: "880px",
+      },
+    },
   },
   plugins: [],
-}
-
+};

@@ -25,3 +25,10 @@ export let getMovieByTheatre=()=>{
         headers: configHeaders(),
     });
 }
+export let getDataSlider=()=>{
+    return axios({
+        url: `${BASE_URL}/QuanLyPhim/LayDanhSachBanner`,
+        method: "GET",
+        headers: configHeaders(),
+    });
+}

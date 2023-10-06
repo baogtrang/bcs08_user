@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { SET_INFO } from '../../redux/constant/user';
 import { useNavigate } from 'react-router-dom';
 import { userLocalStorage } from '../../api/localService';
+import { loginAction } from '../../redux/action/user';
 
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
@@ -25,33 +26,7 @@ const FormLogin = () => {
   // onFinish is an event handler for the form's "onFinish" event
   // gets triggerd when the form is sucessfully submitted
   const onFinish = (values) => {
-    console.log('Success:', values);
-
-    //HTTP POST request is made using Axios, sending "values" (form input data)
-    //to a login endpoint
-    axios
-      .post(`${BASE_URL}/QuanLyNguoiDung/DangNhap`, values, {headers: configHeaders()})
-      //if the POST request is successful, user's info is dispatched to the Redux store
-      //using the SET_INFO action type, the data got stored in Redux is "res.data.content"
-      .then((res)=>{
-        let action = {
-          type: SET_INFO,
-          payload: res.data.content,
-        }
-        dispatch(action);
-        userLocalStorage.set(res.data.content);
-        
-        message.success("Login succeeded");
-
-        //navigate to Home
-        navigate("/")
-        console.log(res);
-      })
-      .catch((err)=>{
-        message.error("Username or Password is not correct")
-        console.log(err)
-      })
-    ;
+    dispatch(loginAction(values));
   };
 
   return <Form
